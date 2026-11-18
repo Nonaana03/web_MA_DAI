@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MA Inovatif Daarul Ihsan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Warna Utama Kustom */
+        .bg-school-blue { background-color: #3b5998; }
+        .bg-school-dark { background-color: #2d4373; }
+        .text-school-dark { color: #2d4373; }
+        
+        /* Warna Aksesibilitas #578bfc */
+        .bg-accent-blue { background-color: #578bfc; }
+        .hover\:bg-accent-blue-dark:hover { background-color: #4370d9; }
+        .text-accent-blue { color: #578bfc; }
+        .border-accent-blue { border-color: #578bfc; }
+
+        /* Style Khusus Banner Foto Gedung Madrasah */
+        .hero-bg-santri {
+            background-image: linear-gradient(to bottom, rgba(45, 67, 115, 0.2), rgba(45, 67, 115, 0.4)), url('fiks.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 450px; /* Atur tinggi banner sesuai kebutuhan */
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- 1. TOP BAR -->
+    <div class="bg-school-blue text-white text-xs py-2 px-4 border-b border-blue-900/30">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            
+            <!-- Kontak & Alamat dengan Sekat Vertikal | -->
+            <div class="flex flex-wrap items-center gap-3 md:gap-4 text-slate-100">
+                <span class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-xs text-school-dark bg-white/90 p-1 rounded-full w-4 h-4 flex items-center justify-center"></i> 022 - 6609683
+                </span>
+                
+                <span class="text-blue-300 font-light">|</span>
+                
+                <span class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-envelope text-xs text-school-dark bg-white/90 p-1 rounded-full w-4 h-4 flex items-center justify-center"></i> mainovatifdaarulihsan@gmail.com
+                </span>
+                
+                <span class="text-blue-300 font-light hidden sm:inline">|</span>
+                
+                <span class="flex items-center gap-1.5 hidden sm:flex">
+                    <i class="fa-solid fa-location-dot text-xs text-school-dark bg-white/90 p-1 rounded-full w-4 h-4 flex items-center justify-center"></i> 
+                    <strong class="font-semibold">Alamat:</strong> Kp. Ciherang RT. 01 RW. 10, Des. Kiangroke, Kab. Bandung
+                </span>
+            </div>
+
+            <!-- Tombol Link Tautan Kami di Kanan (Warna #578bfc) -->
+            <div class="flex items-center">
+                <div class="relative inline-block text-left">
+                    <button class="bg-school-dark hover:bg-blue-950 text-white border border-blue-400/40 px-3 py-1 text-xs font-semibold flex items-center gap-2 shadow-sm rounded-sm">
+                        <span> Selamat Datang</span>
+                        <span class="bg-accent-blue text-white px-1.5 py-0.5 text-[10px] flex items-center justify-center">▼</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 2. MAIN HEADER (LOGO + NAMA SCHOOL + SEARCH BAR) -->
+    <header class="bg-white shadow-sm border-b border-slate-200 py-4 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            <!-- Bagian Kiri: Logo dan Nama Sekolah -->
+            <div class="flex items-center gap-3">
+                <div class="w-14 h-14 bg-white rounded-full border-2 border-accent-blue flex items-center justify-center overflow-hidden shadow-sm shrink-0">
+                    <!-- dai.jpg -->
+                    <img src="dai.jpg" alt="Logo MA Inovatif Daarul Ihsan" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://via.placeholder.com/60?text=MA';" />
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-school-dark tracking-tight leading-tight">
+                        MA INOVATIF DAARUL IHSAN BANDUNG
+                    </h1>
+                    <p class="text-[11px] md:text-xs text-slate-500 tracking-wider font-semibold uppercase">
+                        MA UNGGULAN YANG MENGHASILKAN SDM BERMUTU DAN BERDAYA SAING TINGGI
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bagian Kanan: Search Bar -->
+            <div class="w-full md:w-auto flex justify-end">
+                <form action="#" method="GET" class="flex items-center w-full md:w-72 border border-slate-300 rounded-full overflow-hidden focus-within:ring-2 focus-within:ring-accent-blue">
+                    <input type="text" placeholder="Search..." class="w-full px-4 py-1.5 text-xs text-slate-700 focus:outline-none" />
+                    <button type="submit" class="bg-accent-blue hover:bg-accent-blue-dark text-white text-xs font-semibold px-4 py-1.5 flex items-center justify-center transition">
+                        Search
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- 3. NAVIGATION BAR -->
+  <!-- NAVBAR DENGAN DROPDOWN PROGRAM & ESKUL -->
+        <nav class="bg-blue-500 text-white flex flex-wrap items-center justify-between px-6 py-3 rounded-lg mb-6 shadow-md relative">
+            <div class="flex space-x-1 items-center">
+                <!-- Tombol Beranda -->
+                <button onclick="switchTab('beranda')" id="nav-beranda" class="px-5 py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-school-dark text-white transition">
+                    Beranda
+                </button>
+
+                <!-- Tombol Dropdown Program -->
+                <div class="relative group">
+                    <button id="nav-program" class="px-5 py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-school-dark text-white transition flex items-center gap-1.5">
+                        Program <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div class="absolute left-0 mt-1 w-48 bg-white text-slate-800 rounded-lg shadow-xl border border-slate-200 hidden group-hover:block z-50 py-2">
+                        <a href="javascript:void(0)" onclick="switchTab('program-sekolah')" class="block px-4 py-2 text-xs font-semibold hover:bg-blue-50 hover:text-accent-blue transition">
+                            <i class="fa-solid fa-graduation-cap mr-2 text-accent-blue"></i> Program Sekolah
+                        </a>
+                        <a href="javascript:void(0)" onclick="switchTab('program-pesantren')" class="block px-4 py-2 text-xs font-semibold hover:bg-blue-50 hover:text-accent-blue transition border-t border-slate-100">
+                            <i class="fa-solid fa-bullhorn mr-2 text-accent-blue"></i> Program Pesantren
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tombol Dropdown Ekstrakurikuler (ESKUL) -->
+                <div class="relative group">
+                    <button id="nav-eskul" class="px-5 py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-school-dark text-white transition flex items-center gap-1.5">
+                        Ekstrakurikuler <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div class="absolute left-0 mt-1 w-48 bg-white text-slate-800 rounded-lg shadow-xl border border-slate-200 hidden group-hover:block z-50 py-2">
+                        <a href="javascript:void(0)" onclick="switchTab('eskul-taekwondo')" class="block px-4 py-2 text-xs font-semibold hover:bg-blue-50 hover:text-accent-blue transition">
+                            <i class="fa-solid fa-person-kicking mr-2 text-accent-blue"></i> Taekwondo
+                        </a>
+                        <a href="javascript:void(0)" onclick="switchTab('eskul-pramuka')" class="block px-4 py-2 text-xs font-semibold hover:bg-blue-50 hover:text-accent-blue transition border-t border-slate-100">
+                            <i class="fa-solid fa-campground mr-2 text-accent-blue"></i> Pramuka
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tombol Profil -->
+                <button onclick="switchTab('profile')" id="nav-profile" class="px-5 py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-school-dark text-white transition">
+                    Profil
+                </button>
+
+                <!-- Tombol Jadwal Kegiatan -->
+                <button onclick="switchTab('jadwal')" id="nav-jadwal" class="px-5 py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-school-dark text-white transition">
+                    Jadwal Kegiatan
+                </button>
+            </div>
+            <span class="text-xs font-medium hidden md:inline">Portal Resmi MA Inovatif Daarul Ihsan</span>
+        </nav>
+
+
+    <!-- 4. ISI KONTEN UTAMA -->
+   <main class="max-w-7xl mx-auto px-4 py-8">
+        
+     <!-- ================= 1. SECTION BERANDA (BANNER SLIDER GESER) ================= -->
+        <section id="section-beranda" class="tab-content space-y-8">
+            
+            <!-- Container Utama Slider -->
+            <div class="relative rounded-xl shadow-lg overflow-hidden bg-slate-900 group">
+                
+                <!-- Inner Wrapper Gambar (Flexbox untuk Geser) -->
+                <div id="slider-wrapper" class="flex transition-transform duration-500 ease-out w-full">
+                    
+                    <!-- SLIDE 1 (Foto Gedung & Visi Sekolah) -->
+                    <div class="w-full shrink-0 relative h-72 sm:h-96 flex items-end justify-center p-8">
+                        <img src="fiks.png" alt="Gedung MA Inovatif" class="absolute inset-0 w-full h-full object-cover opacity-80" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent"></div>
+                        <div class="relative z-10 text-center max-w-xl">
+                            <h2 class="text-white text-base sm:text-xl font-bold tracking-wide mb-2 uppercase drop-shadow">
+                                VISI SEKOLAH
+                            </h2>
+                            <p class="text-white text-xs sm:text-sm font-medium leading-relaxed mb-6 drop-shadow-md">
+                                "Terwujudnya Madrasah Aliyah Inovatif Daarul Ihsan Bandung yang Baik, Berilmu dan Bermanfaat."
+                            </p>
+                            <button onclick="switchTab('profile')" class="bg-accent-blue hover:bg-accent-blue-dark text-white text-xs font-bold px-6 py-2.5 rounded-lg shadow-xl transition transform hover:scale-105 border border-white/30">
+                                LIHAT PROFIL SEKOLAH
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 2 (Foto Santri & Program Unggulan) -->
+                    <div class="w-full shrink-0 relative h-72 sm:h-96 flex items-end justify-center p-8">
+                        <img src="santri.jpeg" alt="Kegiatan Santri" class="absolute inset-0 w-full h-full object-cover opacity-80" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent"></div>
+                        <div class="relative z-10 text-center max-w-xl">
+                            <h2 class="text-white text-base sm:text-xl font-bold tracking-wide mb-2 uppercase drop-shadow">
+                                UNGGUL & BERAKHLAK MULIA
+                            </h2>
+                            <p class="text-white text-xs sm:text-sm font-medium leading-relaxed mb-6 drop-shadow-md">
+                                Integrasi kurikulum pesantren dan pendidikan formal berbasis digital untuk mencetak generasi calon pemimpin masa depan.
+                            </p>
+                            <button onclick="switchTab('jadwal')" class="bg-accent-blue hover:bg-accent-blue-dark text-white text-xs font-bold px-6 py-2.5 rounded-lg shadow-xl transition transform hover:scale-105 border border-white/30">
+                                LIHAT JADWAL KEGIATAN
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Tombol Navigasi Panah Kiri & Kanan -->
+                <button onclick="slidePrev()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-9 h-9 rounded-full flex items-center justify-center transition z-20">
+                    <i class="fa-solid fa-chevron-left text-xs"></i>
+                </button>
+                <button onclick="slideNext()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-9 h-9 rounded-full flex items-center justify-center transition z-20">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+
+                <!-- Indicator Dots di Bawah Slider -->
+                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
+                    <button onclick="goToSlideIndex(0)" id="slide-dot-0" class="w-3 h-3 rounded-full bg-white transition shadow-md"></button>
+                    <button onclick="goToSlideIndex(1)" id="slide-dot-1" class="w-3 h-3 rounded-full bg-white/40 transition shadow-md"></button>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- ================= 2. SECTION PROFILE (PROFIL DI ATAS, BERITA DI BAWAH) ================= -->
+        <section id="section-profile" class="tab-content hidden space-y-8">
+            
+            <!-- A. BAGIAN PROFIL MADRASAH (POSISI UTAMA DI ATAS) -->
+            <div class="bg-white rounded-lg border border-slate-200 p-6 md:p-8 shadow-sm">
+                <h2 class="text-xl font-bold text-school-dark border-b pb-3 mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-school text-accent-blue"></i> Profil MA Inovatif Daarul Ihsan
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="font-bold text-sm text-slate-800 mb-2">Sejarah & Latar Belakang</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Sejarah MA Inovatif Daarul Ihsan Bandung berawal dari keprihatinan Dr. K.H. Saefudin Abdul Fattah (Ajengan Aef) terhadap anak-anak yatim dan dhuafa yang kesulitan biaya sekolah, sehingga beliau merintis pengajian gratis di sebuah rumah kontrakan sederhana. Seiring meningkatnya kepercayaan masyarakat, didirikanlah Yayasan Daarul Ihsaan Rumah Kebaikan pada tahun 2015, yang disusul peresmian Pondok Pesantren Inovatif Daarul Ihsaan di Cimahi pada tahun 2018.
+                            Untuk mengintegrasikan pendidikan agama dan umum, yayasan mendirikan sekolah formal termasuk MA Inovatif. Akibat melonjaknya jumlah santri di pusat, yayasan melakukan ekspansi dengan membuka kampus cabang di Banjaran, Kabupaten Bandung. Meski tergolong baru, madrasah ini berhasil berkembang pesat menjadi sekolah modern yang mencetak alumni berprestasi hingga ke luar negeri.
+                        </p>
+                        <h3 class="font-bold text-sm text-slate-800 mb-2">Visi</h3>
+                        <p class="text-xs text-slate-600 italic bg-slate-50 p-3 rounded border border-slate-200 mb-4">
+                           "Terwujudnya Madrasah Aliyah Inovatif Daarul Ihsan Bandung yang Baik, Berilmu dan Bermanfaat."
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm text-slate-800 mb-2">Misi Utama</h3>
+                        <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside mb-4">
+                            <li>Menghasilkan lulusan yang beriman dan bertakwa</li>
+                            <li>Mewujudkan siswa yang mengamalkan ajaran Islam sesuai dengan ajaran Qur'an dan Sunnah</li>
+                            <li>Mewujudkan siswa dalam peningkatan nilai akademis dan non-akademis</li>
+                            <li>Menghasilkan siswa yang berkarakter islami</li>
+                            <li>Menghasilkan siswa yang mampu membaca dan hafal Al-Qur'an</li>
+                        </ul>
+                        <h3 class="font-bold text-sm text-slate-800 mb-2">Identitas Madrasah</h3>
+                        <table class="w-full text-xs text-slate-600">
+                            <tr class="border-b"><td class="py-1.5 font-semibold w-1/3">Nama Sekolah</td><td>: MA Inovatif Daarul Ihsan Bandung</td></tr>
+                            <tr class="border-b"><td class="py-1.5 font-semibold">Jenjang</td><td>: Madrasah Aliyah (MA)</td></tr>
+                            <tr class="border-b"><td class="py-1.5 font-semibold">Akreditasi</td><td>: Terakreditasi Baik</td></tr>
+                            <tr class="border-b"><td class="py-1.5 font-semibold">Kepala Sekolah</td><td>: Priandini Lebiarina, S. Pd</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- B. SECTION BERITA TERBARU & FEED SEKOLAH (POSISI DI BAWAH PROFIL) -->
+            <div class="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Sisi Kiri: Berita Utama / Slider (2 Kolom) -->
+                <div class="lg:col-span-2 bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+                    <!-- Bar Judul Berita Terbaru -->
+                    <div class="bg-school-dark text-white px-5 py-3 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-bullhorn text-accent-blue"></i>
+                            <span class="font-bold text-sm tracking-wide">Berita Terbaru</span>
+                        </div>
+                        <span class="text-xs text-blue-200 hidden sm:inline">MA Inovatif Daarul Ihsan</span>
+                    </div>
+
+                    <!-- Konten Gambar Berita Utama -->
+                    <div class="relative h-64 sm:h-80 w-full overflow-hidden bg-slate-900">
+                        <img src="santri.jpeg" alt="Berita Utama" class="w-full h-full object-cover opacity-90 hover:scale-105 transition duration-500" />
+                        <!-- Gradient Overlay Teks -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-6 text-white">
+                            <div class="flex flex-wrap gap-2 mb-2">
+                                <span class="bg-accent-blue text-white text-[10px] font-bold px-2 py-0.5 rounded">BERITA SEKOLAH</span>
+                                <span class="bg-school-blue text-white text-[10px] font-bold px-2 py-0.5 rounded">KEGIATAN SISWA</span>
+                            </div>
+                            <h3 class="font-bold text-base sm:text-lg leading-snug mb-2">
+                                Santri MA Inovatif Daarul Ihsan Sukses Gelar Pameran Kreativitas dan Inovasi Digital Tingkat Madrasah
+                            </h3>
+                            <p class="text-xs text-slate-300 flex items-center gap-2">
+                                <i class="fa-regular fa-clock text-accent-blue"></i> 03 November 2026
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sisi Kanan: Daftar Berita Samping / Trending (1 Kolom) -->
+                <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+                    <!-- Tab Header Samping -->
+                    <div class="bg-slate-100 border-b border-slate-200 px-4 py-3 flex justify-between items-center text-xs font-bold text-slate-700">
+                        <span class="text-school-dark flex items-center gap-1.5"><i class="fa-solid fa-fire text-amber-500"></i> Terkini & Populer</span>
+                    </div>
+
+                    <!-- List Berita Samping -->
+                    <div class="p-4 space-y-4 flex-1 flex flex-col justify-between">
+                        
+                        <!-- Item Berita 1 -->
+                        <div class="flex gap-3 items-start pb-3 border-b border-slate-100">
+                            <div class="w-20 h-16 rounded overflow-hidden shrink-0 bg-slate-200">
+                                <img src="tka.jpeg" alt="Thumbnail" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex gap-1 mb-1">
+                                    <span class="bg-blue-50 text-school-dark text-[9px] font-bold px-1.5 py-0.5 rounded border border-blue-200">AKADEMIK</span>
+                                </div>
+                                <h4 class="text-xs font-bold text-slate-800 leading-snug hover:text-accent-blue cursor-pointer transition">
+                                    Simulasi TKA Kelas XII MA Inovatif Daarul Ihsan Bandung
+                                </h4>
+                                <span class="text-[10px] text-slate-400 mt-1 block"><i class="fa-regular fa-clock mr-1"></i> 14 Okt 2026</span>
+                            </div>
+                        </div>
+
+                        <!-- Item Berita 2 -->
+                        <div class="flex gap-3 items-start pb-3 border-b border-slate-100">
+                            <div class="w-20 h-16 rounded overflow-hidden shrink-0 bg-slate-200">
+                                <img src="omi.jpeg" alt="Thumbnail" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex gap-1 mb-1">
+                                    <span class="bg-blue-50 text-school-dark text-[9px] font-bold px-1.5 py-0.5 rounded border border-blue-200">PRESTASI</span>
+                                </div>
+                                <h4 class="text-xs font-bold text-slate-800 leading-snug hover:text-accent-blue cursor-pointer transition">
+                                    Juara 3 Olimpiade Madrasah Indonesia (OMI) Tingkta Kabupaten
+                                </h4>
+                                <span class="text-[10px] text-slate-400 mt-1 block"><i class="fa-regular fa-clock mr-1"></i> 13 Sep 2026</span>
+                            </div>
+                        </div>
+
+                        <!-- Item Berita 3 -->
+                        <div class="flex gap-3 items-start">
+                            <div class="w-20 h-16 rounded overflow-hidden shrink-0 bg-slate-200">
+                                <img src="santri.jpeg" alt="Thumbnail" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex gap-1 mb-1">
+                                    <span class="bg-blue-50 text-school-dark text-[9px] font-bold px-1.5 py-0.5 rounded border border-blue-200">KEGIATAN</span>
+                                </div>
+                                <h4 class="text-xs font-bold text-slate-800 leading-snug hover:text-accent-blue cursor-pointer transition">
+                                    Kegiatan Pesantren Kilat dan Pembinaan Karakter Santri
+                                </h4>
+                                <span class="text-[10px] text-slate-400 mt-1 block"><i class="fa-regular fa-clock mr-1"></i> 26 Okt 2026</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= 3. SECTION JADWAL KEGIATAN (UKURAN RINGKAS & RAPI) ================= -->
+        <section id="section-jadwal" class="tab-content hidden space-y-6">
+            
+            <div class="bg-white rounded-lg border border-slate-200 p-6 md:p-8 shadow-sm">
+                <!-- Judul Section Jadwal -->
+                <div class="flex items-center justify-between border-b pb-3 mb-6">
+                    <h2 class="text-xl font-bold text-school-dark flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-days text-accent-blue"></i> Jadwal Kegiatan Harian Santri
+                    </h2>
+                    <span class="text-xs bg-blue-50 text-accent-blue font-semibold px-3 py-1 rounded-full border border-blue-200">
+                        MA Inovatif Daarul Ihsan
+                    </span>
+                </div>
+
+                <!-- Tabel Jadwal dengan Ukuran Ringkas (Compact) -->
+                <div class="overflow-x-auto rounded-lg border border-slate-200">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-school-dark text-white uppercase text-[10px] tracking-wider">
+                                <th class="py-2.5 px-3 font-semibold w-16 text-center">No</th>
+                                <th class="py-2.5 px-3 font-semibold w-36">Waktu (WIB)</th>
+                                <th class="py-2.5 px-3 font-semibold">Jenis Kegiatan Santri</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-slate-700">
+                            <!-- Aktivitas 1 - 17 -->
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">1</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">04:00 - 04:30</td>
+                                <td class="py-2 px-3">Bangun Pagi, Persiapan & Sholat Tahajud</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">2</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">04:30 - 05:30</td>
+                                <td class="py-2 px-3">Sholat Subuh Berjamaah & Wirid / Doa Pagi</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">3</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">05:30 - 06:15</td>
+                                <td class="py-2 px-3">Setoran Hafalan Al-Qur'an (Tahfidz Pagi)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">4</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">06:15 - 07:00</td>
+                                <td class="py-2 px-3">Mandi, Sarapan Pagi & Persiapan ke Sekolah</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">5</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">07:00 - 07:30</td>
+                                <td class="py-2 px-3">Apel Pagi & Sholat Dhuha Bersama</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">6</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">07:30 - 12:00</td>
+                                <td class="py-2 px-3">Kegiatan Belajar Mengajar (KBM) Formal Sesi 1</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">7</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">12:00 - 13:00</td>
+                                <td class="py-2 px-3">Sholat Dzuhur Berjamaah & Makan Siang</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">8</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">13:00 - 15:00</td>
+                                <td class="py-2 px-3">KBM Formal Sesi 2 / Evaluasi Pembelajaran</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">9</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">15:00 - 15:30</td>
+                                <td class="py-2 px-3">Sholat Ashar Berjamaah & Istirahat Singkat</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">10</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">15:30 - 17:00</td>
+                                <td class="py-2 px-3">Kajian Kitab Kuning / Pengembangan Bahasa</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">11</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">17:00 - 18:00</td>
+                                <td class="py-2 px-3">Ekstrakurikuler / Olahraga & Mandi Sore</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">12</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">18:00 - 19:00</td>
+                                <td class="py-2 px-3">Sholat Maghrib Berjamaah & Murojaah Al-Qur'an</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">13</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">19:00 - 19:45</td>
+                                <td class="py-2 px-3">Makan Malam Bersama & Istirahat Sejenak</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">14</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">19:45 - 20:15</td>
+                                <td class="py-2 px-3">Sholat Isya Berjamaah Dilanjut Doa Bersama</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">15</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">20:15 - 21:30</td>
+                                <td class="py-2 px-3">Jam Belajar Mandiri / Bimbingan Malam (Study Club)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">16</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">21:30 - 22:00</td>
+                                <td class="py-2 px-3">Evaluasi Harian & Persiapan Tidur</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-2 px-3 text-center font-medium text-slate-500">17</td>
+                                <td class="py-2 px-3 font-semibold text-accent-blue">22:00 - 04:00</td>
+                                <td class="py-2 px-3">Waktu Istirahat Malam / Tidur Santri</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+  <!-- ================= SECTION PROGRAM SEKOLAH ================= -->
+        <section id="section-program-sekolah" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 md:p-8 rounded-lg border border-slate-200 shadow-sm">
+                <!-- Judul Section -->
+                <h2 class="text-xl font-bold text-school-dark border-b pb-3 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-graduation-cap text-accent-blue"></i> Program Unggulan Sekolah
+                </h2>
+                
+                <!-- Kalimat Deskripsi Utama -->
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                    Pendidikan formal di MA Inovatif berfokus pada kesuksesan masa depan siswa melalui bimbingan intensif masuk PTN dan beasiswa luar negeri (Mesir, Jepang, Australia), serta pengasahan public speaking lewat program pidato/dakwah formal. Selain memfasilitasi kreativitas digital santri melalui Studio Dai Podcast, sekolah menjamin lingkungan belajar yang nyaman dan aman dari perundungan (anti-bullying) dengan pengawasan CCTV di seluruh area strategis pesantren.
+                </p>
+
+                <!-- Status Badge -->
+                <div class="mb-8">
+                    <span class="inline-block bg-blue-50 text-accent-blue text-xs font-bold px-3 py-1 rounded border border-blue-200">
+                        Status Program: Aktif & Dibuka
+                    </span>
+                </div>
+
+                <!-- Judul Bagian Galeri & Keterangan Foto -->
+                <h3 class="text-sm font-bold text-school-dark uppercase tracking-wider mb-4 border-l-4 border-accent-blue pl-3">
+                    Dokumentasi & Fasilitas Kegiatan Sekolah
+                </h3>
+
+                <!-- Grid Foto & Tulisan Keterangan di Bawahnya -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    
+                    <!-- Kartu Foto 1 -->
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="beasiswa.jpg" alt="Pendaftaran Beasiswa" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Pendaftaran Beasiswa Baznas</p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Program beasiswa yang di selenggarakan oleh Baznas</p>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Foto 2 -->
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="diagnosti.jpeg" alt="Fasilitas Pembelajaran" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Tes Diagnostik </p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Pengembangan akademik di bidang Matematika Bersama Ruang Guru</p>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Foto 3 -->
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="dhuha.jpeg" alt="Pelaksanaan Shalat Dhuha" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Kelas 10, 11, dan 12</p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Program wajib shalat dhuha setiap sebelum kegiatan pembelajaran di mulai</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    <!-- ================= SECTION PROGRAM PESANTREN ================= -->
+        <section id="section-program-pesantren" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 md:p-8 rounded-lg border border-slate-200 shadow-sm">
+                <!-- Judul Section -->
+                <h2 class="text-xl font-bold text-school-dark border-b pb-3 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-bullhorn text-accent-blue"></i> Program Unggulan Pesantren
+                </h2>
+                
+                <!-- Kalimat Deskripsi Utama -->
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                    Pesantren Inovatif Daarul Ihsaan mengintegrasikan tiga kurikulum utama, yaitu penguasaan aktif tiga bahasa asing (Arab, Inggris, Jepang) ala Gontor, kajian intensif Kitab Kuning ala Lirboyo, dan program Tahfidz Al-Qur'an (reguler minimal 6 juz atau akselerasi hingga 30 juz). Karakter santri juga dibentuk melalui kedisiplinan ibadah, pembinaan adab, serta berbagai ekstrakurikuler berprestasi seperti taekwondo, silat, dan memanah.
+                </p>
+
+                <!-- Status Badge -->
+                <div class="mb-8">
+                    <span class="inline-block bg-blue-50 text-accent-blue text-xs font-bold px-3 py-1 rounded border border-blue-200">
+                        Status Program: Aktif & Dibuka
+                    </span>
+                </div>
+
+                <!-- Judul Bagian Galeri & Keterangan Foto -->
+                <h3 class="text-sm font-bold text-school-dark uppercase tracking-wider mb-4 border-l-4 border-accent-blue pl-3">
+                    Dokumentasi & Kegiatan Santri Pesantren
+                </h3>
+
+                <!-- Grid Foto & Tulisan Keterangan di Bawahnya -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    
+                    <!-- Kartu Foto 1 (Tahfidz & Murojaah) -->
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="thfz.jpeg" alt="Program Tahfidz Al-Qur'an" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Tahfidz Al-Qur'an & Setoran</p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Bimbingan hafalan harian & program akselerasi</p>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Foto 2 (Kajian Kitab Kuning) -->
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="kemah.jpeg" alt="Kajian Kitab Kuning" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Kegiatan Kemah Tarbiyah DAI Bandung dan Cimahi</p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Menyambungkan tali silaturahmi </p>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Foto 3 (Pengembangan Bahasa Foreign Language) -->
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="rofi.jpeg" alt="Pengembangan Bahasa Asing" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Bahasa Asing Interaktif</p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Percakapan harian Arab, Inggris & Mandarin</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    <!-- ================= SECTION GABUNGAN ESKUL (TAEKWONDO & PRAMUKA) ================= -->
+        <section id="section-eskul" class="tab-content hidden space-y-8">
+            
+            <!-- 1. BLOK TAEKWONDO -->
+            <div class="bg-white p-6 md:p-8 rounded-lg border border-slate-200 shadow-sm">
+                <!-- Judul Sub-Section Taekwondo -->
+                <h2 class="text-xl font-bold text-school-dark border-b pb-3 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-person-kicking text-accent-blue"></i> Ekstrakurikuler Taekwondo
+                </h2>
+                
+                <!-- Deskripsi Taekwondo -->
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                    Ekstrakurikuler Taekwondo di MA Inovatif Daarul Ihsan bertujuan untuk melatih ketangkasan fisik, disiplin mental, serta kedisiplinan santri. Di bawah bimbingan pelatih profesional, santri diajarkan seni bela diri, ketahanan stamina, serta nilai-nilai keolahragaan yang menjunjung tinggi kedisiplinan dan rasa percaya diri.
+                </p>
+
+                <!-- Status Badge Jadwal -->
+                <div class="mb-6">
+                    <span class="inline-block bg-blue-50 text-accent-blue text-xs font-bold px-3 py-1 rounded border border-blue-200">
+                        Jadwal Latihan: Setiap Hari Sabtu (15:30 WIB)
+                    </span>
+                </div>
+
+                <!-- Judul Galeri -->
+                <h3 class="text-xs font-bold text-school-dark uppercase tracking-wider mb-4 border-l-4 border-accent-blue pl-3">
+                    Dokumentasi Kegiatan Taekwondo
+                </h3>
+
+                <!-- Grid Foto Taekwondo -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="santri.jpeg" alt="Latihan Taekwondo" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Latihan Fisik & Jurus (Poomsae)</p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Pembentukan stamina & teknik dasar tendangan</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="bdg.jpg" alt="Ujian Kenaikan Sabuk" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Ujian Kenaikan Sabuk (Geup)</p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Evaluasi periodik sertifikasi tingkatan sabuk santri</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. BLOK PRAMUKA -->
+            <div class="bg-white p-6 md:p-8 rounded-lg border border-slate-200 shadow-sm">
+                <!-- Judul Sub-Section Pramuka -->
+                <h2 class="text-xl font-bold text-school-dark border-b pb-3 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-tent text-accent-blue"></i> Ekstrakurikuler Pramuka
+                </h2>
+                
+                <!-- Deskripsi Pramuka -->
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                    Gerakan Pramuka MA Inovatif Daarul Ihsan membentuk kepemimpinan, kemandirian, dan kepedulian sosial santri melalui kegiatan kepanduan yang edukatif dan menyenangkan. Program mencakup latihan ketangkasan pionering, sandi, tali-temali, penjelajahan alam, hingga perkemahan rutin (Perjusami).
+                </p>
+
+                <!-- Status Badge Jadwal -->
+                <div class="mb-6">
+                    <span class="inline-block bg-blue-50 text-accent-blue text-xs font-bold px-3 py-1 rounded border border-blue-200">
+                        Jadwal Latihan: Setiap Hari Jumat (15:30 WIB)
+                    </span>
+                </div>
+
+                <!-- Judul Galeri -->
+                <h3 class="text-xs font-bold text-school-dark uppercase tracking-wider mb-4 border-l-4 border-accent-blue pl-3">
+                    Dokumentasi Kegiatan Pramuka
+                </h3>
+
+                <!-- Grid Foto Pramuka -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="santri.jpeg" alt="Latihan Pramuka" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Pionering & Tali-Temali</p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Pelatihan keterampilan pembuatan tiang & jembatan</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+                        <div class="h-40 overflow-hidden relative">
+                            <img src="bdg.jpg" alt="Perkemahan Santri" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Perkemahan & Api Unggun</p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Kegiatan outdoor pembentukan karakter & kebersamaan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+    <!-- ================= SECTION KHUSUS GALERI PRAMUKA ================= -->
+        <section id="section-eskul-pramuka" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 md:p-8 rounded-lg border border-slate-200 shadow-sm">
+                
+                <!-- Judul Utama Halaman Pramuka -->
+                <h2 class="text-xl font-bold text-school-dark border-b pb-3 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-tent text-accent-blue"></i> Galeri Dokumentasi Ekstrakurikuler Pramuka
+                </h2>
+                
+                <!-- Pengantar Singkat -->
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                    Berikut adalah dokumentasi berbagai kegiatan kepanduan dan latihan rutin Ekstrakurikuler Pramuka MA Inovatif Daarul Ihsan dalam membentuk kedisiplinan, kemandirian, serta jiwa kepemimpinan santri.
+                </p>
+
+                <!-- Grid Galeri Foto (3 Kolom di Layar Besar, 1 Kolom di HP) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    
+                    <!-- Foto 1 -->
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="kemah.jpeg" alt="Kemah Tarbiyah di Gunung Puntang 2026" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Kemah Tarbiyah di Gunung Puntang 2026</p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Program Tahunan Daarul Ihsan Bandung - Cimahi</p>
+                        </div>
+                    </div>
+
+                    <!-- Foto 2 -->
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="akhwat.jpeg" alt="Perkemahan Jumat Sabtu" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Lomba LKBB Antar Kelompok Akhwat</p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Kegiatan outdoor perlombaan LKBB akhwat</p>
+                        </div>
+                    </div>
+
+                    <!-- Foto 3 -->
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="pbb.jpeg" alt="Pelantikan Anggota" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Latihan LKBB Ikhwan</p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Persiapan Latihan LKBB untuk Upacara 17 Agustus 2026</p>
+                        </div>
+                    </div>
+
+                    <!-- Foto 4 (Kamu bisa tambah atau duplikat baris ini jika fotonya banyak) -->
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="ikhwan.jpeg" alt="Keterampilan Sandi & Semaphore" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Pasukan Upacara</p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">(Pemimpin Upacara dan Pemimpin Barisan) </p>
+                        </div>
+                    </div>
+
+                    <!-- Foto 5 -->
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="razhan.jpeg" alt="Bakti Sosial" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Malam Keakraban Api Unggun</p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Mengukuhkan dedikasi serta nilai-nilai integritas yang telah ditanamkan sepanjang kegiatan ini</p>
+                        </div>
+                    </div>
+
+                    <!-- Foto 6 -->
+                    <div class="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="tth.jpeg" alt="Penjelajahan Alam" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="p-3 text-center border-t border-slate-200 bg-white">
+                            <p class="text-xs font-bold text-school-dark">Penjelajahan & Tracking</p>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Uji ketangkasan menyusur jalur alam terbuka</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+
+   <!-- 5. FfOOTER UTAMA 4 KOLOM -->
+    <footer class="bg-school-dark text-slate-300 text-xs pt-12 pb-6 border-t-4 border-accent-blue mt-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+            
+            <!-- Kolom 1: Social Media Kami -->
+            <div>
+                <h4 class="font-bold text-white text-sm mb-4 uppercase tracking-wider border-b border-blue-800 pb-2">Social Media Kami</h4>
+                <div class="flex gap-2 mb-4">
+                    <a href="#" class="w-8 h-8 bg-school-blue hover:bg-accent-blue text-white flex items-center justify-center rounded transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-8 h-8 bg-school-blue hover:bg-accent-blue text-white flex items-center justify-center rounded transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-8 h-8 bg-school-blue hover:bg-accent-blue text-white flex items-center justify-center rounded transition"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <p class="text-[11px] text-slate-300 leading-relaxed">
+                    Ayo follow dan ikuti informasi seputar kegiatan di MA Inovatif Daarul Ihsan di sosial media kami.
+                </p>
+            </div>
+
+            <!-- Kolom 2: Tentang Sekolah -->
+            <div>
+                <h4 class="font-bold text-white text-sm mb-4 uppercase tracking-wider border-b border-blue-800 pb-2">Tentang MA Daarul Ihsan</h4>
+                <p class="text-[11px] text-slate-300 leading-relaxed">
+                    MA Inovatif Daarul Ihsan Kabupaten Bandung merupakan salah satu lembaga pendidikan Islam menengah yang menyelenggarakan program pendidikan unggulan berbasis ilmu pengetahuan, teknologi, dan akhlakul karimah.
+                </p>
+            </div>
+
+            <!-- Kolom 3: Link Tautan Kami -->
+            <div>
+                <h4 class="font-bold text-white text-sm mb-4 uppercase tracking-wider border-b border-blue-800 pb-2">Link Tautan Kami</h4>
+                <ul class="space-y-2 text-[11px]">
+                    <li><a href="#" class="hover:text-white transition flex items-center gap-1.5"><i class="fa-solid fa-angle-right text-[10px]"></i> Kementerian Agama (Kemenag)</a></li>
+                    <li><a href="#" class="hover:text-white transition flex items-center gap-1.5"><i class="fa-solid fa-angle-right text-[10px]"></i> Portal PPDB Online</a></li>
+                    <li><a href="#" class="hover:text-white transition flex items-center gap-1.5"><i class="fa-solid fa-angle-right text-[10px]"></i> E-Perpus MA Daarul Ihsan</a></li>
+                    <li><a href="#" class="hover:text-white transition flex items-center gap-1.5"><i class="fa-solid fa-angle-right text-[10px]"></i> Profil Kelulusan Siswa</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom 4: Informasi Terkini -->
+            <div>
+                <h4 class="font-bold text-white text-sm mb-4 uppercase tracking-wider border-b border-blue-800 pb-2">Informasi Terkini</h4>
+                <ul class="space-y-3 text-[11px]">
+                    <li>
+                        <a href="#" class="hover:text-white transition block">
+                            <strong class="text-white block">Penerimaan Peserta Didik Baru (PPDB) Tahun Ajaran 2026/2027 Resmi Dibuka</strong>
+                            <span class="text-blue-300 text-[10px]">03 November 2026</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:text-white transition block">
+                            <strong class="text-white block">Peringatan Hari Santri Nasional & Pameran Inovasi Siswa</strong>
+                            <span class="text-blue-300 text-[10px]">22 Oktober 2026</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Copyright Bawah -->
+        <div class="max-w-7xl mx-auto px-4 pt-6 border-t border-blue-900/50 text-center text-[11px] text-slate-400">
+            <div class="flex justify-center gap-4 mb-2 font-medium">
+                <button onclick="switchTab('beranda')" class="hover:text-white transition">Beranda</button>
+                <span>|</span>
+                <button onclick="switchTab('profile')" class="hover:text-white transition">Profil</button>
+            </div>
+            <p>All Rights Reserved © 2026 MA Inovatif Daarul Ihsan Bandung.</p>
+        </div>
+    </footer>
+
+   <!-- JAVASCRIPT LOGIC SWITCH TAB -->
+  <script>
+        // Fungsi utama untuk pindah tab & halaman
+        function switchTab(tabName) {
+            // 1. Sembunyikan semua konten tab
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+
+            // 2. Tampilkan section yang sesuai dengan nama tab yang diklik
+            const targetSection = document.getElementById('section-' + tabName);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+
+            // 3. Otomatis gulir layar (scroll) ke atas dengan halus
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // --- Logika Slider Geser Beranda ---
+        let slideIndex = 0;
+        const totalSlideCount = 2;
+
+        function renderSlide() {
+            const wrapper = document.getElementById('slider-wrapper');
+            if (wrapper) {
+                wrapper.style.transform = `translateX(-${slideIndex * 100}%)`;
+            }
+
+            // Update indikator titik
+            for (let i = 0; i < totalSlideCount; i++) {
+                const dot = document.getElementById('slide-dot-' + i);
+                if (dot) {
+                    if (i === slideIndex) {
+                        dot.className = "w-3 h-3 rounded-full bg-white transition shadow-md scale-110";
+                    } else {
+                        dot.className = "w-3 h-3 rounded-full bg-white/40 transition shadow-md";
+                    }
+                }
+            }
+        }
+
+        function slideNext() {
+            slideIndex = (slideIndex + 1) % totalSlideCount;
+            renderSlide();
+        }
+
+        function slidePrev() {
+            slideIndex = (slideIndex - 1 + totalSlideCount) % totalSlideCount;
+            renderSlide();
+        }
+
+        function goToSlideIndex(idx) {
+            slideIndex = idx;
+            renderSlide();
+        }
+
+        // Geser banner otomatis setiap 4 detik
+        setInterval(slideNext, 4000);
+    </script>
+</body>
+</html>
